@@ -14,7 +14,7 @@ APaddleGameBall::APaddleGameBall()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SM_Ball = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SM_Ball"));
-	SM_Ball->AttachTo(GetRootComponent());
+	RootComponent = SM_Ball; // ->SetupAttachment(GetRootComponent());
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh>SphereMeshAsset(TEXT("/Engine/BasicShapes/Sphere"));
 	static ConstructorHelpers::FObjectFinder<UMaterial>SphereMaterialAsset(TEXT("/Game/Materials/M_Ball"));
