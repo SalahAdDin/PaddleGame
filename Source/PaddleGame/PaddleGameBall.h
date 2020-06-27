@@ -15,12 +15,12 @@ public:
 	// Sets default values for this actor's properties
 	APaddleGameBall();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	class UProjectileMovementComponent* ProjectileMovement = nullptr;
+
 protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UStaticMeshComponent* SM_Ball = nullptr;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	class UProjectileMovementComponent* ProjectileMovement = nullptr;
 
 };
