@@ -6,6 +6,7 @@
 #include "AIController.h"
 #include "PaddleGameAIController.generated.h"
 
+class APaddleGameBall;
 /**
  * 
  */
@@ -13,5 +14,11 @@ UCLASS()
 class PADDLEGAME_API APaddleGameAIController : public AAIController
 {
 	GENERATED_BODY()
+
+	APaddleGameBall* Ref_Ball;
+
+
+public:
+	virtual void Tick(float DeltaTime) override;
 	
 };
