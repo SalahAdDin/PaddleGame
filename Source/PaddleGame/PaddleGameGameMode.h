@@ -40,7 +40,7 @@ public:
 		APaddleGameBall* Ref_GameBall = nullptr;
 
 	UPROPERTY(EditDefaultsOnly, Category = Behaviour)
-		float Speed;
+		float BallSpeed;
 
 
 	UPROPERTY(BlueprintReadOnly, Category = Score)

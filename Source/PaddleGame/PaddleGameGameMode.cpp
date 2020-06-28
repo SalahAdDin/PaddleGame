@@ -72,5 +72,5 @@ void APaddleGameGameMode::SpawnBall()
 
 void APaddleGameGameMode::SetVelocity()
 {
-	if(Ref_GameBall) Ref_GameBall->ProjectileMovement->Velocity = FVector(Direction * Speed, 0.f, 0.f).RotateAngleAxis(FMath::RandRange(-45.f, 45.f), FVector(0.f, 1.f, 0.f));
+	if(Ref_GameBall) Ref_GameBall->ProjectileMovement->Velocity = FVector(Direction * BallSpeed, 0.f, 0.f).RotateAngleAxis(FMath::RandRange(-45.f, 45.f), FVector(0.f, 1.f, 0.f));
 }
