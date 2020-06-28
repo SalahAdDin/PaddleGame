@@ -60,7 +60,11 @@ void APaddleGameGameMode::SpawnBall()
 	{
 		FActorSpawnParameters SpawnParameters;
 		SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
-		Ref_GameBall = world->SpawnActor<APaddleGameBall>(APaddleGameBall::StaticClass(), FTransform(FRotator::ZeroRotator, FVector::ZeroVector, FVector::OneVector), SpawnParameters);
+		Ref_GameBall = world->SpawnActor<APaddleGameBall>(
+			APaddleGameBall::StaticClass(), 
+			FTransform(FRotator::ZeroRotator, FVector::ZeroVector, FVector::OneVector), 
+			SpawnParameters
+		);
 
 		if (Ref_GameBall) world->GetTimerManager().SetTimer(DelayBallMovement, this, &APaddleGameGameMode::SetVelocity, 0.2f);
 	}
@@ -69,5 +73,4 @@ void APaddleGameGameMode::SpawnBall()
 void APaddleGameGameMode::SetVelocity()
 {
 	if(Ref_GameBall) Ref_GameBall->ProjectileMovement->Velocity = FVector(Direction * Speed, 0.f, 0.f).RotateAngleAxis(FMath::RandRange(-45.f, 45.f), FVector(0.f, 1.f, 0.f));
-	Ref_GameBall->ProjectileMovement->Activate();
 }
