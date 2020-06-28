@@ -7,6 +7,7 @@
 #include "PaddleGameAIController.generated.h"
 
 class APaddleGameBall;
+class APaddleGameCharacter;
 /**
  * 
  */
@@ -17,8 +18,11 @@ class PADDLEGAME_API APaddleGameAIController : public AAIController
 
 	APaddleGameBall* Ref_Ball;
 
+	APaddleGameCharacter* Ref_PaddleCharacter;
+
 
 public:
+	virtual void OnPossess(APawn * InPawn) override;
 	virtual void Tick(float DeltaTime) override;
 	
 };
